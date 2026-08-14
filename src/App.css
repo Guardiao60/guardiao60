@@ -1,0 +1,1198 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111827;
+}
+
+button,
+input,
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #111827;
+}
+
+/* =====================================================
+   TELA
+===================================================== */
+
+.screen {
+  width: 390px;
+  min-height: 780px;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 35px 28px;
+
+  background: #f2f6ff;
+
+  color: #172033;
+}
+
+/* =====================================================
+   BOTÃO VOLTAR
+===================================================== */
+
+.back-button {
+  position: absolute;
+
+  top: 22px;
+  left: 22px;
+
+  width: 42px !important;
+  height: 42px;
+
+  padding: 0 !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50% !important;
+
+  background: white !important;
+
+  color: #2864e8 !important;
+
+  border: 1px solid #dce3ef !important;
+
+  font-size: 25px !important;
+
+  font-weight: normal !important;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+
+  z-index: 1000;
+}
+
+.back-button:hover {
+  background: #edf3ff !important;
+
+  transform: none !important;
+}
+
+/* =====================================================
+   BOTÕES GERAIS
+===================================================== */
+
+button:not(.back-button) {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 9px;
+
+  padding: 14px 18px;
+
+  background: #2864e8;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  box-shadow: 0 5px 14px rgba(40, 100, 232, 0.22);
+
+  transition: 0.2s;
+}
+
+button:not(.back-button):hover {
+  background: #1e55c9;
+
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+
+  transform: none !important;
+}
+
+/* =====================================================
+   PRIMEIRAS 3 TELAS
+===================================================== */
+
+.onboarding {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.illustration {
+  width: 170px;
+
+  height: 170px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 90px;
+
+  margin-bottom: 30px;
+}
+
+.onboarding h1 {
+  font-size: 23px;
+
+  line-height: 1.3;
+
+  margin-bottom: 18px;
+}
+
+.onboarding p {
+  max-width: 290px;
+
+  color: #737d90;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  margin-bottom: 35px;
+}
+
+/* =====================================================
+   PONTOS DAS PRIMEIRAS TELAS
+===================================================== */
+
+.dots {
+  position: absolute;
+
+  bottom: 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+.dots span {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #111827;
+}
+
+.dots .active {
+  width: 8px;
+
+  height: 8px;
+
+  background: #2864e8;
+}
+
+/* =====================================================
+   FORMULÁRIOS
+===================================================== */
+
+.form-screen {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  padding-top: 100px;
+}
+
+.logo {
+  font-size: 65px;
+
+  margin-bottom: 20px;
+}
+
+.form-screen h1 {
+  font-size: 23px;
+
+  line-height: 1.3;
+
+  margin-bottom: 8px;
+}
+
+.form-screen > p {
+  color: #737d90;
+
+  font-size: 13px;
+
+  margin-bottom: 25px;
+}
+
+input {
+  width: 100%;
+
+  border: 1px solid #d5dcea;
+
+  border-radius: 9px;
+
+  background: white;
+
+  padding: 13px 14px;
+
+  margin-bottom: 10px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  box-shadow: 0 3px 12px rgba(30, 50, 100, 0.07);
+}
+
+input:focus {
+  border-color: #2864e8;
+}
+
+.form-screen button {
+  margin-top: 8px;
+}
+
+/* =====================================================
+   LINKS
+===================================================== */
+
+.link-button {
+  background: transparent !important;
+
+  color: #2864e8 !important;
+
+  box-shadow: none !important;
+
+  margin-top: 15px !important;
+}
+
+.link-button:hover {
+  background: transparent !important;
+}
+
+.small {
+  margin-top: 20px;
+
+  margin-bottom: 8px;
+}
+
+.create-button {
+  background: white !important;
+
+  color: #2864e8 !important;
+
+  border: 1px solid #2864e8 !important;
+
+  box-shadow: none !important;
+}
+
+/* =====================================================
+   TELA PRINCIPAL
+===================================================== */
+
+.home-screen {
+  padding-top: 100px;
+}
+
+.top-user {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 32px;
+}
+
+.top-user span {
+  display: block;
+
+  color: #697489;
+
+  font-size: 12px;
+
+  margin-bottom: 5px;
+}
+
+.top-user strong {
+  display: block;
+
+  font-size: 16px;
+}
+
+.avatar {
+  width: 43px;
+
+  height: 43px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 23px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.home-shield {
+  width: 125px;
+
+  height: 125px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin: 25px auto;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 65px;
+
+  box-shadow: 0 10px 30px rgba(40, 100, 232, 0.12);
+}
+
+.home-screen h1 {
+  text-align: center;
+
+  font-size: 27px;
+
+  line-height: 1.25;
+
+  margin-bottom: 12px;
+}
+
+.home-screen > p {
+  text-align: center;
+
+  color: #737d90;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-bottom: 25px;
+}
+
+.home-screen button {
+  margin-bottom: 12px;
+}
+
+.main-action {
+  background: #2864e8 !important;
+}
+
+.secondary {
+  background: white !important;
+
+  color: #2864e8 !important;
+
+  border: 1px solid #2864e8 !important;
+
+  box-shadow: none !important;
+}
+
+/* =====================================================
+   CABEÇALHO DAS PÁGINAS
+===================================================== */
+
+.page-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.small-logo {
+  font-size: 32px;
+}
+
+/* =====================================================
+   ANÁLISE DE MENSAGEM
+===================================================== */
+
+.analysis-screen {
+  padding-top: 90px;
+}
+
+.analysis-screen h1 {
+  font-size: 26px;
+
+  margin-bottom: 12px;
+}
+
+.analysis-screen > p {
+  color: #737d90;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+
+  height: 230px;
+
+  resize: none;
+
+  padding: 15px;
+
+  background: white;
+
+  border: 1px solid #d5dcea;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-bottom: 15px;
+
+  box-shadow: 0 4px 15px rgba(30, 50, 100, 0.07);
+}
+
+textarea:focus {
+  border-color: #2864e8;
+}
+
+.analysis-screen button {
+  margin-bottom: 15px;
+}
+
+.example {
+  background: #eaf1ff;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  color: #526079;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+.example strong {
+  display: block;
+
+  color: #2864e8;
+
+  margin-bottom: 6px;
+}
+
+/* =====================================================
+   RESULTADO DA ANÁLISE
+===================================================== */
+
+.result-screen {
+  text-align: left;
+
+  padding-top: 90px;
+}
+
+.danger-icon {
+  text-align: center;
+
+  font-size: 65px;
+
+  margin-bottom: 15px;
+}
+
+.result-screen h1 {
+  text-align: center;
+
+  color: #d72e2e;
+
+  font-size: 23px;
+
+  line-height: 1.25;
+
+  margin-bottom: 12px;
+}
+
+.result-description {
+  text-align: center;
+
+  color: #697489;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  margin-bottom: 20px;
+}
+
+.result-box {
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin-bottom: 12px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+.result-box h2,
+.recommendation h2 {
+  font-size: 12px;
+
+  margin-bottom: 12px;
+}
+
+.reason {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 8px 0;
+
+  border-bottom: 1px solid #edf0f5;
+
+  font-size: 11px;
+}
+
+.reason:last-child {
+  border-bottom: none;
+}
+
+.recommendation {
+  background: white;
+
+  border-radius: 12px;
+
+  padding: 18px;
+
+  margin-bottom: 15px;
+
+  border-left: 4px solid #2864e8;
+}
+
+.recommendation p {
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  margin-bottom: 7px;
+}
+
+.result-screen button {
+  margin-bottom: 10px;
+}
+
+/* =====================================================
+   TELAS DE INFORMAÇÃO
+===================================================== */
+
+.info-screen {
+  padding-top: 90px;
+
+  padding-bottom: 40px;
+}
+
+.page-icon {
+  width: 90px;
+
+  height: 90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin: 0 auto 25px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  font-size: 45px;
+
+  box-shadow: 0 8px 25px rgba(40, 100, 232, 0.1);
+}
+
+.info-screen > h1 {
+  text-align: center;
+
+  font-size: 26px;
+
+  margin-bottom: 12px;
+}
+
+.info-screen > p {
+  text-align: center;
+
+  color: #737d90;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-bottom: 25px;
+}
+
+/* =====================================================
+   CARDS DE INFORMAÇÃO
+===================================================== */
+
+.info-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: white;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  margin-bottom: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.info-card > span {
+  font-size: 32px;
+}
+
+.info-card h2 {
+  font-size: 14px;
+
+  margin-bottom: 5px;
+}
+
+.info-card p {
+  color: #737d90;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   HISTÓRICO
+===================================================== */
+
+.history-screen {
+  padding-bottom: 40px;
+}
+
+.history-list {
+  width: 100%;
+}
+
+.history-card {
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 16px;
+
+  margin-bottom: 14px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.history-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+.history-danger {
+  width: 40px;
+
+  height: 40px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: #fff1f1;
+
+  font-size: 20px;
+}
+
+.history-header strong {
+  display: block;
+
+  color: #d72e2e;
+
+  font-size: 12px;
+
+  margin-bottom: 4px;
+}
+
+.history-header small {
+  display: block;
+
+  color: #7a8496;
+
+  font-size: 10px;
+}
+
+.history-message {
+  background: #f5f7fb;
+
+  border-radius: 8px;
+
+  padding: 11px;
+
+  color: #4d586c;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.history-reasons {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  font-size: 10px;
+
+  color: #626d80;
+}
+
+.history-reasons strong {
+  color: #293449;
+
+  font-size: 11px;
+
+  margin-bottom: 3px;
+}
+
+.history-list > button {
+  margin-top: 5px;
+}
+
+/* =====================================================
+   HISTÓRICO VAZIO
+===================================================== */
+
+.empty-history {
+  text-align: center;
+
+  background: white;
+
+  border-radius: 15px;
+
+  padding: 35px 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.empty-history > div {
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+.empty-history h2 {
+  font-size: 17px;
+
+  margin-bottom: 8px;
+}
+
+.empty-history p {
+  color: #737d90;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  margin-bottom: 15px;
+}
+
+/* =====================================================
+   ÁREA DE ESTUDOS
+===================================================== */
+
+.study-screen {
+  padding-top: 90px;
+
+  padding-bottom: 40px;
+}
+
+.study-intro {
+  text-align: center;
+
+  color: #737d90;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  margin-bottom: 22px;
+}
+
+.study-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 13px;
+
+  background: white;
+
+  border-radius: 14px;
+
+  padding: 15px;
+
+  margin-bottom: 13px;
+
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.study-icon {
+  width: 45px;
+
+  height: 45px;
+
+  min-width: 45px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 12px;
+
+  background: #eef3ff;
+
+  font-size: 23px;
+}
+
+.study-content {
+  flex: 1;
+}
+
+.study-content h2 {
+  font-size: 14px;
+
+  margin-bottom: 7px;
+
+  color: #172033;
+}
+
+.study-content > p {
+  color: #687389;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  margin-bottom: 10px;
+}
+
+.study-button {
+  width: auto !important;
+
+  padding: 8px 11px !important;
+
+  background: #eef3ff !important;
+
+  color: #2864e8 !important;
+
+  border: 1px solid #d6e2ff !important;
+
+  box-shadow: none !important;
+
+  font-size: 10px !important;
+}
+
+.study-button:hover {
+  background: #e1ebff !important;
+}
+
+.study-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  margin-top: 12px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #edf0f5;
+}
+
+.study-details strong {
+  color: #2864e8;
+
+  font-size: 10px;
+
+  margin-top: 3px;
+}
+
+.study-details span {
+  color: #59657a;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+}
+
+/* =====================================================
+   ALERTA EDUCATIVO
+===================================================== */
+
+.study-warning {
+  background: #fff8e8;
+
+  border: 1px solid #f3dfaa;
+
+  border-radius: 14px;
+
+  padding: 17px;
+
+  margin-top: 8px;
+}
+
+.study-warning h2 {
+  font-size: 15px;
+
+  margin-bottom: 8px;
+
+  color: #8a6200;
+}
+
+.study-warning p {
+  color: #6e5b2b;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+
+  margin-bottom: 12px;
+}
+
+.study-warning div {
+  color: #665526;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  margin-bottom: 7px;
+}
+
+.study-warning div:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   CONTATOS DE CONFIANÇA
+===================================================== */
+
+.contact-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  background: white;
+
+  padding: 15px;
+
+  padding-right: 58px;
+
+  border-radius: 12px;
+
+  margin-bottom: 12px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.contact-avatar {
+  width: 45px;
+
+  height: 45px;
+
+  min-width: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eef3ff;
+
+  font-size: 25px;
+}
+
+.contact-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.contact-card h2 {
+  font-size: 15px;
+
+  margin-bottom: 4px;
+}
+
+.contact-card p {
+  color: #737d90;
+
+  font-size: 11px;
+
+  margin-bottom: 5px;
+}
+
+.contact-phone {
+  display: block;
+
+  color: #526079;
+
+  font-size: 11px;
+}
+
+.delete-contact {
+  position: absolute;
+
+  right: 12px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 36px !important;
+
+  height: 36px;
+
+  padding: 0 !important;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #fff1f1 !important;
+
+  color: #d72e2e !important;
+
+  border: 1px solid #ffd2d2 !important;
+
+  border-radius: 8px !important;
+
+  box-shadow: none !important;
+
+  font-size: 16px !important;
+}
+
+.delete-contact:hover {
+  background: #ffe1e1 !important;
+
+  color: #b91c1c !important;
+
+  transform: translateY(-50%) !important;
+}
+
+.add-contact-button {
+  margin-top: 8px;
+}
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 500px) {
+
+  .app {
+    background: #f2f6ff;
+  }
+
+  .screen {
+    width: 100%;
+
+    min-height: 100vh;
+  }
+
+  .back-button {
+    top: 20px;
+
+    left: 20px;
+  }
+}
