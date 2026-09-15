@@ -1,11 +1,14 @@
 function Footer() {
   return (
-    <footer>
-      <p>&copy; 2025 Seu Nome. Todos os direitos reservados.</p>
-      <p>
-        Siga-me no <a href="#">LinkedIn</a> · <a href="#">Instagram</a> · <a href="#">GitHub</a>
-      </p>
+    <footer
+      style={{
+        width: "100%",
+        textAlign: "center",
+      }}
+    >
+      <p>&copy; 2026 Heloísa Raizer. Todos os direitos reservados.</p>
     </footer>
   );
 }
+
 export default Footer;
