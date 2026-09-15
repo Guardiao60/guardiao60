@@ -1,0 +1,242 @@
+.dadosPage {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  padding: 42px 6% 70px;
+
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(30, 136, 229, 0.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      180deg,
+      #f7faff 0%,
+      #eef4fa 100%
+    );
+
+  color: #183153;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+   ========================================================= */
+
+.dadosHeader {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto 30px;
+}
+
+.dadosHeaderContent {
+  position: relative;
+
+  padding: 30px 34px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border: 1px solid #e1eaf4;
+  border-radius: 22px;
+
+  box-shadow:
+    0 10px 30px rgba(24, 65, 110, 0.07);
+
+  overflow: hidden;
+}
+
+
+/* detalhe azul no topo */
+
+.dadosHeaderContent::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    #176dcc,
+    #39a1f4
+  );
+}
+
+
+/* brilho decorativo */
+
+.dadosHeaderContent::after {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -130px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(30, 136, 229, 0.06);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ETIQUETA
+   ========================================================= */
+
+.dadosTag {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 13px;
+
+  border-radius: 30px;
+
+  background: #eaf4ff;
+
+  border: 1px solid #d8eaff;
+
+  color: #1765b5;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.dadosHeader h1 {
+  position: relative;
+  z-index: 1;
+
+  margin: 15px 0 8px;
+
+  color: #132f57;
+
+  font-size: clamp(30px, 4vw, 44px);
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+
+/* =========================================================
+   DESCRIÇÃO
+   ========================================================= */
+
+.dadosHeader p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 760px;
+
+  margin: 0;
+
+  color: #687b91;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   ÁREA DO DASHBOARD POWER BI
+   ========================================================= */
+
+/*
+   O componente <Dashboard /> continua sendo usado normalmente.
+
+   Aqui apenas damos espaçamento e aparência para a área
+   onde ele é renderizado.
+*/
+
+.dadosPage > .dashboardPage {
+  width: 100%;
+}
+
+
+/* Caso o Dashboard tenha um container próprio */
+
+.dadosPage .dashboardContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .dadosPage {
+    padding: 30px 24px 55px;
+  }
+
+  .dadosHeaderContent {
+    padding: 27px;
+  }
+
+  .dadosHeader h1 {
+    font-size: 34px;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .dadosPage {
+    padding: 22px 16px 45px;
+  }
+
+  .dadosHeader {
+    margin-bottom: 22px;
+  }
+
+  .dadosHeaderContent {
+    padding: 24px 20px;
+    border-radius: 18px;
+  }
+
+  .dadosTag {
+    font-size: 10px;
+  }
+
+  .dadosHeader h1 {
+    margin-top: 13px;
+
+    font-size: 29px;
+
+    letter-spacing: -0.4px;
+  }
+
+  .dadosHeader p {
+    font-size: 13px;
+  }
+}
