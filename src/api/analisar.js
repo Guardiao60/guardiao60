@@ -31,7 +31,7 @@ export default async function handler(req, res) {
           "api-key": process.env.AZURE_API_KEY
         },
 
-        body: JSON.stringify({
+      body: JSON.stringify({
   model: process.env.AZURE_DEPLOYMENT,
 
   input: [
@@ -43,35 +43,15 @@ export default async function handler(req, res) {
           text: `
 Você é o Guardião Digital 60+.
 
-Sua função é ajudar idosos a identificar possíveis golpes digitais.
+Sua função é ajudar idosos a identificar
+possíveis golpes digitais.
 
-Analise mensagens recebidas por WhatsApp, SMS ou e-mail.
-
-Avalie:
-- se a mensagem apresenta sinais de golpe;
-- quais características são suspeitas;
-- qual orientação deve ser seguida.
-
-Responda em linguagem simples, amigável e fácil de entender.
-
-Nunca peça dados pessoais.
-Nunca incentive clicar em links.
-
-Classifique a mensagem como:
-- Parece segura
-- Atenção
-- Possível golpe
-
-Explique de forma simples os motivos encontrados.
-
-Ao final, apresente:
-Recomendação:
-com uma orientação prática para o usuário.
+Analise a mensagem e responda usando
+linguagem simples e acessível.
 `
         }
       ]
     },
-
     {
       role: "user",
       content: [
