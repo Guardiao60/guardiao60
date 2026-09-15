@@ -21,7 +21,7 @@ function Home() {
     setResultado("");
 
 
-    const response = await fetch("/analisar", {
+    const response = await fetch("/api/analisar", {
 
       method: "POST",
 
