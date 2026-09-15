@@ -32,16 +32,15 @@ export default async function handler(req, res) {
         },
 
         body: JSON.stringify({
+  model: process.env.AZURE_DEPLOYMENT,
 
-          model: process.env.AZURE_DEPLOYMENT,
-
-          input: [
-            {
-              role: "system",
-              content: [
-                {
-                  type: "input_text",
-                  text: `
+  input: [
+    {
+      role: "system",
+      content: [
+        {
+          type: "input_text",
+          text: `
 Você é o Guardião Digital 60+.
 
 Sua função é ajudar idosos a identificar possíveis golpes digitais.
@@ -58,86 +57,29 @@ Responda em linguagem simples, amigável e fácil de entender.
 Nunca peça dados pessoais.
 Nunca incentive clicar em links.
 
-Formato da resposta:
-
-🛡️ Resultado da análise:
-
-Indique:
-- Seguro
+Classifique a mensagem como:
+- Parece segura
 - Atenção
 - Possível golpe
 
-Explique os motivos.
+Explique de forma simples os motivos encontrados.
 
-Depois informe:
-"Recomendação:"
-com uma orientação prática.
+Ao final, apresente:
+Recomendação:
+com uma orientação prática para o usuário.
 `
-                }
-              ]
-            },
+        }
+      ]
+    },
 
-            {
-              role: "user",
-              content: [
-                {
-                  type: "input_text",
-                  text: mensagem
-                }
-              ]
-            }
-          ],
-
-          temperature: 0.2
-
-        })
-
-      }
-    );
-
-
-    const dados = await resposta.json();
-
-
-    // Caso o Azure retorne erro
-    if (!resposta.ok) {
-
-      console.error(dados);
-
-      return res.status(resposta.status).json({
-        erro: "Erro ao consultar Azure OpenAI"
-      });
-
+    {
+      role: "user",
+      content: [
+        {
+          type: "input_text",
+          text: mensagem
+        }
+      ]
     }
-
-
-    // Extrai a resposta do GPT-5
-    const textoResposta =
-      dados.output?.[0]
-        ?.content?.[0]
-        ?.text;
-
-
-    return res.status(200).json({
-
-      resposta:
-        textoResposta ||
-        "Não foi possível gerar uma análise."
-
-    });
-
-
-  } catch (erro) {
-
-    console.error(erro);
-
-
-    return res.status(500).json({
-
-      erro: "Erro interno no servidor"
-
-    });
-
-  }
-
-}
+  ]
+})
