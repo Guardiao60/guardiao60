@@ -1,24 +1,66 @@
-
 import React, { useState } from "react";
 import "../../App.css";
 import Header from "../../Components/Header";
-import Footer from "../../Components/Footer";
 
 function Home() {
   const [message, setMessage] = useState("");
+  const [resultado, setResultado] = useState("");
+  const [loading, setLoading] = useState(false);
+   
+  async function handleAnalyze() {
 
-  function handleAnalyze() {
-    if (!message.trim()) {
-      alert("Cole uma mensagem antes de analisar.");
-      return;
-    }
-
-    alert("Mensagem enviada para análise.");
+  if (!message.trim()) {
+    alert("Cole uma mensagem antes de analisar.");
+    return;
   }
 
-  function handleClear() {
-    setMessage("");
+
+  try {
+
+    setLoading(true);
+    setResultado("");
+
+
+    const response = await fetch("/api/analisar", {
+
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        mensagem: message
+      })
+
+    });
+
+
+    const data = await response.json();
+
+
+    setResultado(data.resposta);
+
+
+  } catch (error) {
+
+     setResultado(
+      "Não foi possível realizar a análise. Tente novamente."
+    );
+
+  } finally {
+
+    setLoading(false);
+
   }
+
+}
+function handleClear() {
+
+  setMessage("");
+  setResultado("");
+
+}
 
   return (
     <main className="home">
@@ -157,6 +199,26 @@ function Home() {
           </button>
 
         </div>
+        {loading && (
+  <div className="resultCard">
+    🔎 Analisando mensagem...
+  </div>
+)}
+
+
+{resultado && (
+  <div className="resultCArd">
+
+    <h3>
+      🛡️ Resultado da análise
+    </h3>
+
+    <p>
+      {resultado}
+    </p>
+
+  </div>
+)}
 
       </section>
 
@@ -249,9 +311,8 @@ function Home() {
         </div>
 
       </section>
-        <Footer/>
-    </main>
 
+    </main>
   );
 }
 
