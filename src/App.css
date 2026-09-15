@@ -1,1198 +1,923 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #111827;
+  background: #f4f8fd;
+  color: #172b4d;
+}
+
+a {
+  text-decoration: none;
 }
 
 button,
-input,
 textarea {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: inherit;
 }
 
-button {
-  cursor: pointer;
-}
 
-.app {
-  min-height: 100vh;
+/* =========================================================
+   HEADER
+========================================================= */
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: #111827;
-}
-
-/* =====================================================
-   TELA
-===================================================== */
-
-.screen {
-  width: 390px;
-  min-height: 780px;
-
-  position: relative;
-  overflow: hidden;
-
-  padding: 35px 28px;
-
-  background: #f2f6ff;
-
-  color: #172033;
-}
-
-/* =====================================================
-   BOTÃO VOLTAR
-===================================================== */
-
-.back-button {
-  position: absolute;
-
-  top: 22px;
-  left: 22px;
-
-  width: 42px !important;
-  height: 42px;
-
-  padding: 0 !important;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: 50% !important;
-
-  background: white !important;
-
-  color: #2864e8 !important;
-
-  border: 1px solid #dce3ef !important;
-
-  font-size: 25px !important;
-
-  font-weight: normal !important;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-
-  z-index: 1000;
-}
-
-.back-button:hover {
-  background: #edf3ff !important;
-
-  transform: none !important;
-}
-
-/* =====================================================
-   BOTÕES GERAIS
-===================================================== */
-
-button:not(.back-button) {
+.header {
   width: 100%;
+  height: 82px;
+  background: #ffffff;
+  border-bottom: 1px solid #e5edf7;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 18px rgba(23, 74, 145, 0.07);
+}
 
-  border: none;
+.headerContainer {
+  max-width: 1250px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 28px;
 
-  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  padding: 14px 18px;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: inherit;
+}
 
-  background: #2864e8;
+.logoRobot {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: #edf5ff;
 
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
 
+.logoRobot img {
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+}
+
+.logoText h1 {
+  margin: 0;
+  color: #174a91;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.logoText p {
+  margin: 4px 0 0;
+  color: #718096;
   font-size: 12px;
+}
 
-  font-weight: bold;
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-  box-shadow: 0 5px 14px rgba(40, 100, 232, 0.22);
+.navItem {
+  padding: 11px 16px;
+  border-radius: 10px;
+
+  color: #52627a;
+  font-size: 14px;
+  font-weight: 700;
 
   transition: 0.2s;
 }
 
-button:not(.back-button):hover {
-  background: #1e55c9;
+.navItem:hover {
+  background: #edf5ff;
+  color: #1557a6;
+}
 
+.dashboardButton {
+  padding: 11px 18px;
+  border-radius: 10px;
+
+  background: #1557a6;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow: 0 5px 15px rgba(21, 87, 166, 0.2);
+
+  transition: 0.2s;
+}
+
+.dashboardButton:hover {
+  background: #0d4384;
   transform: translateY(-1px);
 }
 
-button:disabled {
-  opacity: 0.45;
 
-  cursor: not-allowed;
+/* =========================================================
+   HOME
+========================================================= */
 
-  transform: none !important;
+.home {
+  min-height: 100vh;
 }
 
-/* =====================================================
-   PRIMEIRAS 3 TELAS
-===================================================== */
 
-.onboarding {
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  padding: 28px 20px 25px;
+}
+
+.heroContent {
+  max-width: 1250px;
+  min-height: 405px;
+
+  margin: 0 auto;
+
+  padding: 38px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(
+    135deg,
+    #174a91,
+    #287cc4
+  );
+
   display: flex;
-
-  flex-direction: column;
-
   align-items: center;
+  justify-content: space-between;
 
-  justify-content: center;
+  overflow: hidden;
 
-  text-align: center;
+  box-shadow:
+    0 18px 45px rgba(21, 87, 166, 0.2);
 }
 
-.illustration {
-  width: 170px;
-
-  height: 170px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  font-size: 90px;
-
-  margin-bottom: 30px;
+.heroText {
+  width: 62%;
+  position: relative;
+  z-index: 2;
 }
 
-.onboarding h1 {
-  font-size: 23px;
+.heroTag {
+  display: inline-block;
 
-  line-height: 1.3;
+  padding: 8px 13px;
 
-  margin-bottom: 18px;
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.14);
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
 }
 
-.onboarding p {
-  max-width: 290px;
+.hero h1 {
+  margin: 18px 0 12px;
 
-  color: #737d90;
+  color: white;
 
-  font-size: 13px;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 800;
 
+  max-width: 650px;
+}
+
+.hero h1 span {
+  display: block;
+  color: #66c9ff;
+}
+
+.heroText > p {
+  max-width: 610px;
+
+  margin: 0;
+
+  color: #e4f2ff;
+
+  font-size: 14px;
   line-height: 1.6;
-
-  margin-bottom: 35px;
 }
 
-/* =====================================================
-   PONTOS DAS PRIMEIRAS TELAS
-===================================================== */
+.heroButtons {
+  margin-top: 24px;
+}
 
-.dots {
-  position: absolute;
+.primaryButton {
+  border: none;
 
-  bottom: 25px;
-
-  display: flex;
-
+  display: inline-flex;
   align-items: center;
-
-  gap: 5px;
-}
-
-.dots span {
-  width: 6px;
-
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: #111827;
-}
-
-.dots .active {
-  width: 8px;
-
-  height: 8px;
-
-  background: #2864e8;
-}
-
-/* =====================================================
-   FORMULÁRIOS
-===================================================== */
-
-.form-screen {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  text-align: center;
-
-  padding-top: 100px;
-}
-
-.logo {
-  font-size: 65px;
-
-  margin-bottom: 20px;
-}
-
-.form-screen h1 {
-  font-size: 23px;
-
-  line-height: 1.3;
-
-  margin-bottom: 8px;
-}
-
-.form-screen > p {
-  color: #737d90;
-
-  font-size: 13px;
-
-  margin-bottom: 25px;
-}
-
-input {
-  width: 100%;
-
-  border: 1px solid #d5dcea;
-
-  border-radius: 9px;
-
-  background: white;
-
-  padding: 13px 14px;
-
-  margin-bottom: 10px;
-
-  outline: none;
-
-  font-size: 13px;
-
-  box-shadow: 0 3px 12px rgba(30, 50, 100, 0.07);
-}
-
-input:focus {
-  border-color: #2864e8;
-}
-
-.form-screen button {
-  margin-top: 8px;
-}
-
-/* =====================================================
-   LINKS
-===================================================== */
-
-.link-button {
-  background: transparent !important;
-
-  color: #2864e8 !important;
-
-  box-shadow: none !important;
-
-  margin-top: 15px !important;
-}
-
-.link-button:hover {
-  background: transparent !important;
-}
-
-.small {
-  margin-top: 20px;
-
-  margin-bottom: 8px;
-}
-
-.create-button {
-  background: white !important;
-
-  color: #2864e8 !important;
-
-  border: 1px solid #2864e8 !important;
-
-  box-shadow: none !important;
-}
-
-/* =====================================================
-   TELA PRINCIPAL
-===================================================== */
-
-.home-screen {
-  padding-top: 100px;
-}
-
-.top-user {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 32px;
-}
-
-.top-user span {
-  display: block;
-
-  color: #697489;
-
-  font-size: 12px;
-
-  margin-bottom: 5px;
-}
-
-.top-user strong {
-  display: block;
-
-  font-size: 16px;
-}
-
-.avatar {
-  width: 43px;
-
-  height: 43px;
-
-  display: flex;
-
   justify-content: center;
+  gap: 8px;
 
-  align-items: center;
-
-  border-radius: 50%;
-
-  background: white;
-
-  font-size: 23px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.home-shield {
-  width: 125px;
-
-  height: 125px;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  margin: 25px auto;
-
-  border-radius: 50%;
-
-  background: white;
-
-  font-size: 65px;
-
-  box-shadow: 0 10px 30px rgba(40, 100, 232, 0.12);
-}
-
-.home-screen h1 {
-  text-align: center;
-
-  font-size: 27px;
-
-  line-height: 1.25;
-
-  margin-bottom: 12px;
-}
-
-.home-screen > p {
-  text-align: center;
-
-  color: #737d90;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-
-  margin-bottom: 25px;
-}
-
-.home-screen button {
-  margin-bottom: 12px;
-}
-
-.main-action {
-  background: #2864e8 !important;
-}
-
-.secondary {
-  background: white !important;
-
-  color: #2864e8 !important;
-
-  border: 1px solid #2864e8 !important;
-
-  box-shadow: none !important;
-}
-
-/* =====================================================
-   CABEÇALHO DAS PÁGINAS
-===================================================== */
-
-.page-header {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  margin-bottom: 40px;
-}
-
-.small-logo {
-  font-size: 32px;
-}
-
-/* =====================================================
-   ANÁLISE DE MENSAGEM
-===================================================== */
-
-.analysis-screen {
-  padding-top: 90px;
-}
-
-.analysis-screen h1 {
-  font-size: 26px;
-
-  margin-bottom: 12px;
-}
-
-.analysis-screen > p {
-  color: #737d90;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-
-  margin-bottom: 20px;
-}
-
-textarea {
-  width: 100%;
-
-  height: 230px;
-
-  resize: none;
-
-  padding: 15px;
-
-  background: white;
-
-  border: 1px solid #d5dcea;
-
-  border-radius: 12px;
-
-  outline: none;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-
-  margin-bottom: 15px;
-
-  box-shadow: 0 4px 15px rgba(30, 50, 100, 0.07);
-}
-
-textarea:focus {
-  border-color: #2864e8;
-}
-
-.analysis-screen button {
-  margin-bottom: 15px;
-}
-
-.example {
-  background: #eaf1ff;
+  padding: 12px 18px;
 
   border-radius: 10px;
 
-  padding: 15px;
+  background: #ffffff;
+  color: #1557a6;
 
-  color: #526079;
-
-  font-size: 11px;
-
-  line-height: 1.5;
-}
-
-.example strong {
-  display: block;
-
-  color: #2864e8;
-
-  margin-bottom: 6px;
-}
-
-/* =====================================================
-   RESULTADO DA ANÁLISE
-===================================================== */
-
-.result-screen {
-  text-align: left;
-
-  padding-top: 90px;
-}
-
-.danger-icon {
-  text-align: center;
-
-  font-size: 65px;
-
-  margin-bottom: 15px;
-}
-
-.result-screen h1 {
-  text-align: center;
-
-  color: #d72e2e;
-
-  font-size: 23px;
-
-  line-height: 1.25;
-
-  margin-bottom: 12px;
-}
-
-.result-description {
-  text-align: center;
-
-  color: #697489;
-
-  font-size: 12px;
-
-  line-height: 1.5;
-
-  margin-bottom: 20px;
-}
-
-.result-box {
-  background: white;
-
-  border-radius: 12px;
-
-  padding: 18px;
-
-  margin-bottom: 12px;
-
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
-}
-
-.result-box h2,
-.recommendation h2 {
-  font-size: 12px;
-
-  margin-bottom: 12px;
-}
-
-.reason {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 8px 0;
-
-  border-bottom: 1px solid #edf0f5;
-
-  font-size: 11px;
-}
-
-.reason:last-child {
-  border-bottom: none;
-}
-
-.recommendation {
-  background: white;
-
-  border-radius: 12px;
-
-  padding: 18px;
-
-  margin-bottom: 15px;
-
-  border-left: 4px solid #2864e8;
-}
-
-.recommendation p {
-  font-size: 11px;
-
-  line-height: 1.5;
-
-  margin-bottom: 7px;
-}
-
-.result-screen button {
-  margin-bottom: 10px;
-}
-
-/* =====================================================
-   TELAS DE INFORMAÇÃO
-===================================================== */
-
-.info-screen {
-  padding-top: 90px;
-
-  padding-bottom: 40px;
-}
-
-.page-icon {
-  width: 90px;
-
-  height: 90px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  margin: 0 auto 25px;
-
-  border-radius: 50%;
-
-  background: white;
-
-  font-size: 45px;
-
-  box-shadow: 0 8px 25px rgba(40, 100, 232, 0.1);
-}
-
-.info-screen > h1 {
-  text-align: center;
-
-  font-size: 26px;
-
-  margin-bottom: 12px;
-}
-
-.info-screen > p {
-  text-align: center;
-
-  color: #737d90;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-
-  margin-bottom: 25px;
-}
-
-/* =====================================================
-   CARDS DE INFORMAÇÃO
-===================================================== */
-
-.info-card {
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  background: white;
-
-  padding: 15px;
-
-  border-radius: 12px;
-
-  margin-bottom: 12px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-.info-card > span {
-  font-size: 32px;
-}
-
-.info-card h2 {
   font-size: 14px;
+  font-weight: 800;
 
-  margin-bottom: 5px;
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+  transition: 0.2s;
 }
 
-.info-card p {
-  color: #737d90;
-
-  font-size: 11px;
-
-  line-height: 1.4;
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* =====================================================
-   HISTÓRICO
-===================================================== */
+.heroBenefits {
+  margin-top: 25px;
 
-.history-screen {
-  padding-bottom: 40px;
-}
-
-.history-list {
-  width: 100%;
-}
-
-.history-card {
-  background: white;
-
-  border-radius: 14px;
-
-  padding: 16px;
-
-  margin-bottom: 14px;
-
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-}
-
-.history-header {
   display: flex;
-
   align-items: center;
-
-  gap: 12px;
-
-  margin-bottom: 12px;
+  gap: 25px;
 }
 
-.history-danger {
-  width: 40px;
+.heroBenefits div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
-  height: 40px;
+  color: white;
+
+  font-size: 12px;
+}
+
+.heroBenefits span {
+  width: 30px;
+  height: 30px;
 
   display: flex;
-
+  align-items: center;
   justify-content: center;
-
-  align-items: center;
 
   border-radius: 50%;
 
-  background: #fff1f1;
-
-  font-size: 20px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.history-header strong {
-  display: block;
 
-  color: #d72e2e;
+/* =========================================================
+   ROBÔ
+========================================================= */
 
-  font-size: 12px;
+.heroRobot {
+  width: 38%;
+  height: 360px;
 
-  margin-bottom: 4px;
-}
+  position: relative;
 
-.history-header small {
-  display: block;
-
-  color: #7a8496;
-
-  font-size: 10px;
-}
-
-.history-message {
-  background: #f5f7fb;
-
-  border-radius: 8px;
-
-  padding: 11px;
-
-  color: #4d586c;
-
-  font-size: 11px;
-
-  line-height: 1.5;
-
-  margin-bottom: 12px;
-}
-
-.history-reasons {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.heroRobot img {
+  width: 310px;
+  height: 310px;
+
+  object-fit: contain;
+
+  position: relative;
+  z-index: 2;
+
+  filter: drop-shadow(
+    0 15px 25px rgba(0, 0, 0, 0.18)
+  );
+}
+
+.robotGlow {
+  width: 280px;
+  height: 280px;
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.1);
+
+  filter: blur(8px);
+}
+
+.robotMessage {
+  position: absolute;
+
+  top: 40px;
+  right: 5px;
+
+  padding: 13px 15px;
+
+  background: white;
+
+  border-radius: 13px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  display: flex;
   flex-direction: column;
 
-  gap: 5px;
+  gap: 4px;
 
-  font-size: 10px;
-
-  color: #626d80;
+  z-index: 5;
 }
 
-.history-reasons strong {
-  color: #293449;
+.robotMessage strong {
+  color: #1557a6;
+  font-size: 12px;
+}
 
+.robotMessage span {
+  color: #718096;
   font-size: 11px;
-
-  margin-bottom: 3px;
 }
 
-.history-list > button {
-  margin-top: 5px;
-}
 
-/* =====================================================
-   HISTÓRICO VAZIO
-===================================================== */
+/* =========================================================
+   ANÁLISE
+========================================================= */
 
-.empty-history {
-  text-align: center;
+.analysisSection {
+  max-width: 1050px;
+
+  margin: 0 auto 50px;
+
+  padding: 30px;
 
   background: white;
 
-  border-radius: 15px;
+  border-radius: 20px;
 
-  padding: 35px 20px;
-
-  margin-bottom: 20px;
-
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  box-shadow:
+    0 10px 35px rgba(23, 74, 145, 0.07);
 }
 
-.empty-history > div {
-  font-size: 55px;
-
-  margin-bottom: 15px;
-}
-
-.empty-history h2 {
-  font-size: 17px;
-
-  margin-bottom: 8px;
-}
-
-.empty-history p {
-  color: #737d90;
-
-  font-size: 12px;
-
-  line-height: 1.5;
-
-  margin-bottom: 15px;
-}
-
-/* =====================================================
-   ÁREA DE ESTUDOS
-===================================================== */
-
-.study-screen {
-  padding-top: 90px;
-
-  padding-bottom: 40px;
-}
-
-.study-intro {
-  text-align: center;
-
-  color: #737d90;
-
-  font-size: 13px;
-
-  line-height: 1.5;
+.analysisHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 
   margin-bottom: 22px;
 }
 
-.study-card {
-  display: flex;
+.sectionIcon {
+  width: 48px;
+  height: 48px;
 
-  align-items: flex-start;
-
-  gap: 13px;
-
-  background: white;
-
-  border-radius: 14px;
-
-  padding: 15px;
-
-  margin-bottom: 13px;
-
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-}
-
-.study-icon {
-  width: 45px;
-
-  height: 45px;
-
-  min-width: 45px;
+  flex-shrink: 0;
 
   display: flex;
-
+  align-items: center;
   justify-content: center;
 
-  align-items: center;
+  border-radius: 13px;
+
+  background: #edf5ff;
+
+  font-size: 22px;
+}
+
+.analysisHeader h2 {
+  margin: 0 0 4px;
+
+  color: #172b4d;
+
+  font-size: 20px;
+}
+
+.analysisHeader p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 13px;
+}
+
+.messageBox {
+  position: relative;
+}
+
+.messageBox textarea {
+  width: 100%;
+  min-height: 145px;
+
+  resize: vertical;
+
+  padding: 18px;
+
+  border: 1px solid #d7e4f3;
 
   border-radius: 12px;
 
-  background: #eef3ff;
+  outline: none;
+
+  color: #263b5a;
+
+  font-size: 14px;
+
+  background: #fbfdff;
+}
+
+.messageBox textarea:focus {
+  border-color: #287cc4;
+
+  box-shadow:
+    0 0 0 3px rgba(40, 124, 196, 0.1);
+}
+
+.characterCount {
+  position: absolute;
+
+  bottom: 10px;
+  right: 12px;
+
+  color: #9aa9bc;
+
+  font-size: 10px;
+}
+
+.analysisButtons {
+  margin-top: 20px;
+
+  display: flex;
+  gap: 10px;
+}
+
+.analysisButtons .primaryButton {
+  background: #1557a6;
+  color: white;
+}
+
+.clearButton {
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 10px;
+
+  background: #edf2f7;
+
+  color: #52627a;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.howSection {
+  max-width: 1050px;
+
+  margin: 0 auto;
+
+  padding: 0 20px 70px;
+}
+
+.sectionTitle span {
+  color: #1557a6;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.sectionTitle h2 {
+  margin: 9px 0 5px;
+
+  color: #172b4d;
+
+  font-size: 28px;
+}
+
+.sectionTitle p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 13px;
+}
+
+.steps {
+  margin-top: 25px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.stepCard {
+  padding: 24px;
+
+  background: white;
+
+  border: 1px solid #e4edf7;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 7px 22px rgba(23, 74, 145, 0.05);
+}
+
+.stepNumber {
+  color: #b7c9df;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.stepIcon {
+  width: 43px;
+  height: 43px;
+
+  margin: 15px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #edf5ff;
+
+  border-radius: 12px;
+
+  font-size: 20px;
+}
+
+.stepCard h3 {
+  margin: 0 0 8px;
+
+  color: #263b5a;
+
+  font-size: 16px;
+}
+
+.stepCard p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboardPage {
+  min-height: calc(100vh - 82px);
+
+  padding: 45px 20px;
+
+  background: #f4f8fd;
+}
+
+.dashboardContainer {
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+.dashboardHeader {
+  padding: 30px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 8px 30px rgba(23, 74, 145, 0.06);
+}
+
+.dashboardTag {
+  display: inline-block;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: #eaf3ff;
+
+  color: #1557a6;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.dashboardHeader h1 {
+  margin: 12px 0 5px;
+
+  color: #172b4d;
+
+  font-size: 30px;
+}
+
+.dashboardHeader p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 14px;
+}
+
+.dashboardCards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+.dashboardCard {
+  padding: 24px;
+
+  background: white;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 8px 25px rgba(23, 74, 145, 0.05);
+
+  display: flex;
+
+  gap: 15px;
+}
+
+.dashboardIcon {
+  width: 50px;
+  height: 50px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #edf5ff;
 
   font-size: 23px;
 }
 
-.study-content {
-  flex: 1;
+.dashboardCard h3 {
+  margin: 0 0 7px;
+
+  color: #52627a;
+
+  font-size: 13px;
 }
 
-.study-content h2 {
-  font-size: 14px;
+.dashboardCard strong {
+  display: block;
 
-  margin-bottom: 7px;
+  margin-bottom: 3px;
 
-  color: #172033;
+  color: #174a91;
+
+  font-size: 27px;
 }
 
-.study-content > p {
-  color: #687389;
+.dashboardCard p {
+  margin: 0;
+
+  color: #8a96a8;
 
   font-size: 11px;
-
-  line-height: 1.5;
-
-  margin-bottom: 10px;
 }
 
-.study-button {
-  width: auto !important;
 
-  padding: 8px 11px !important;
+/* =========================================================
+   RESPONSIVO
+========================================================= */
 
-  background: #eef3ff !important;
+@media (max-width: 850px) {
 
-  color: #2864e8 !important;
+  .headerContainer {
+    padding: 0 18px;
+  }
 
-  border: 1px solid #d6e2ff !important;
+  .heroContent {
+    flex-direction: column;
 
-  box-shadow: none !important;
+    align-items: flex-start;
 
-  font-size: 10px !important;
+    padding: 30px;
+  }
+
+  .heroText {
+    width: 100%;
+  }
+
+  .heroRobot {
+    width: 100%;
+    height: 280px;
+  }
+
+  .heroRobot img {
+    width: 240px;
+    height: 240px;
+  }
+
+  .steps,
+  .dashboardCards {
+    grid-template-columns: 1fr;
+  }
 }
 
-.study-button:hover {
-  background: #e1ebff !important;
+@media (max-width: 600px) {
+
+  .header {
+    height: 70px;
+  }
+
+  .logoText h1 {
+    font-size: 16px;
+  }
+
+  .logoText p {
+    display: none;
+  }
+
+  .dashboardButton {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 15px 12px;
+  }
+
+  .heroContent {
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .heroBenefits {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .analysisSection {
+    margin: 0 12px 35px;
+    padding: 22px;
+  }
+
+  .analysisButtons {
+    flex-wrap: wrap;
+  }
+
+  .robotMessage {
+    right: 0;
+    top: 20px;
+  }
+}
+/* ================================
+   DASHBOARD - SOMENTE /DADOS
+================================ */
+
+.dashboardPage {
+  min-height: calc(100vh - 80px);
+  padding: 45px 7% 80px;
+  background: #f5f8fc;
 }
 
-.study-details {
-  display: flex;
+.dashboardHero {
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
 
-  flex-direction: column;
+.dashboardTag {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #e8f2ff;
+  color: #1765b5;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
 
-  gap: 7px;
+.dashboardHero h1 {
+  margin: 0;
+  color: #183153;
+  font-size: 40px;
+  font-weight: 800;
+}
 
+.dashboardHero p {
+  max-width: 750px;
   margin-top: 12px;
-
-  padding-top: 12px;
-
-  border-top: 1px solid #edf0f5;
+  color: #6d7e92;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-.study-details strong {
-  color: #2864e8;
-
-  font-size: 10px;
-
-  margin-top: 3px;
-}
-
-.study-details span {
-  color: #59657a;
-
-  font-size: 10px;
-
-  line-height: 1.45;
-}
-
-/* =====================================================
-   ALERTA EDUCATIVO
-===================================================== */
-
-.study-warning {
-  background: #fff8e8;
-
-  border: 1px solid #f3dfaa;
-
-  border-radius: 14px;
-
-  padding: 17px;
-
-  margin-top: 8px;
-}
-
-.study-warning h2 {
-  font-size: 15px;
-
-  margin-bottom: 8px;
-
-  color: #8a6200;
-}
-
-.study-warning p {
-  color: #6e5b2b;
-
-  font-size: 11px;
-
-  line-height: 1.5;
-
-  margin-bottom: 12px;
-}
-
-.study-warning div {
-  color: #665526;
-
-  font-size: 10px;
-
-  line-height: 1.5;
-
-  margin-bottom: 7px;
-}
-
-.study-warning div:last-child {
-  margin-bottom: 0;
-}
-
-/* =====================================================
-   CONTATOS DE CONFIANÇA
-===================================================== */
-
-.contact-card {
-  position: relative;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
+.dashboardCard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 28px;
   background: white;
-
-  padding: 15px;
-
-  padding-right: 58px;
-
-  border-radius: 12px;
-
-  margin-bottom: 12px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5edf6;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(30, 70, 110, 0.10);
 }
 
-.contact-avatar {
-  width: 45px;
-
-  height: 45px;
-
-  min-width: 45px;
-
+.dashboardHeader {
   display: flex;
-
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
+}
 
-  justify-content: center;
+.dashboardSmallTitle {
+  color: #176fc1;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
 
-  border-radius: 50%;
-
-  background: #eef3ff;
-
+.dashboardHeader h2 {
+  margin: 5px 0;
+  color: #183153;
   font-size: 25px;
 }
 
-.contact-info {
-  flex: 1;
-
-  min-width: 0;
+.dashboardHeader p {
+  margin: 0;
+  color: #8190a3;
 }
 
-.contact-card h2 {
-  font-size: 15px;
-
-  margin-bottom: 4px;
-}
-
-.contact-card p {
-  color: #737d90;
-
-  font-size: 11px;
-
-  margin-bottom: 5px;
-}
-
-.contact-phone {
-  display: block;
-
-  color: #526079;
-
-  font-size: 11px;
-}
-
-.delete-contact {
-  position: absolute;
-
-  right: 12px;
-
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  width: 36px !important;
-
-  height: 36px;
-
-  padding: 0 !important;
-
+.dashboardIcon {
+  width: 52px;
+  height: 52px;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  background: #fff1f1 !important;
-
-  color: #d72e2e !important;
-
-  border: 1px solid #ffd2d2 !important;
-
-  border-radius: 8px !important;
-
-  box-shadow: none !important;
-
-  font-size: 16px !important;
+  border-radius: 15px;
+  background: #eaf4ff;
+  font-size: 24px;
 }
 
-.delete-contact:hover {
-  background: #ffe1e1 !important;
-
-  color: #b91c1c !important;
-
-  transform: translateY(-50%) !important;
+.dashboardFrame {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid #e1e9f3;
+  background: #f7f9fc;
 }
 
-.add-contact-button {
-  margin-top: 8px;
-}
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media (max-width: 500px) {
-
-  .app {
-    background: #f2f6ff;
-  }
-
-  .screen {
-    width: 100%;
-
-    min-height: 100vh;
-  }
-
-  .back-button {
-    top: 20px;
-
-    left: 20px;
-  }
+.dashboardFrame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
