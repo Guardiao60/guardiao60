@@ -1,38 +1,38 @@
-// src/Components/Header.jsx
-import { useAuth } from "../context/AuthContext";
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = () => {
-  const { user, loginWithGoogle, loginWithMicrosoft, logout } = useAuth();
-
+function Header() {
   return (
     <header className="header">
-      <h1>Prof Karen Carvalho</h1>
-      <p>Experiências de aprendizagem & desenvolvimento web</p>
+      <div className="headerContainer">
 
-      <div style={{ marginLeft: "auto" }}>
-        {user ? (
-          <>
-            <span style={{ marginRight: "1rem" }}>
-              Olá, {user.displayName || user.email}
-            </span>
-            <button onClick={logout}>Sair</button>
-          </>
-        ) : (
-          <>
-            <button onClick={loginWithGoogle}>
-              Entrar com Google
-            </button>
-            <button
-              onClick={loginWithMicrosoft}
-              style={{ marginLeft: "0.5rem" }}
-            >
-              Entrar com Microsoft
-            </button>
-          </>
-        )}
+        <Link to="/" className="logo">
+          <div className="logoRobot">
+            <img
+              src="/robozinho.png"
+              alt="Robô Guardião Digital 60+"
+            />
+          </div>
+
+          <div className="logoText">
+            <h1>Guardião Digital 60+</h1>
+            <p>Tecnologia que protege quem você ama</p>
+          </div>
+        </Link>
+
+        <nav className="navigation">
+          <Link to="/" className="navItem">
+            Início
+          </Link>
+
+          <Link to="/dados" className="dashboardButton">
+            Dashboard
+          </Link>
+        </nav>
+
       </div>
     </header>
   );
-};
+}
 
 export default Header;
